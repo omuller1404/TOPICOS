@@ -1,0 +1,33 @@
+<h1>Animales</h1>
+<div class="card" style="border-radius: 10px;">
+    <div class="d-flex p-3" style="justify-content:end;">
+        <button (click)="animalesAlta()"  class="cbutton">Dar de alta un animal</button>
+    </div>
+    <div class="p-3">
+        <table class="table table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Animal</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Edad</th>
+                </tr>
+            </thead>
+            <tbody  class="table-group-divider">
+                <tr *ngFor="let item of data | paginate: { itemsPerPage: 5, currentPage: p } let ix=index ">
+                    <th scope="row">{{item.id}}</th>
+                    <td>{{item.name}}</td>
+                    <td>{{item.pname}}</td>
+                    <td>{{item.sex}}</td>
+                    <td>{{item.type}}</td>
+                    <td>{{item.age}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="p-3">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>

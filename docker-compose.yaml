@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+  mongodb:
+    image: 'mongo'
+    volumes: 
+      - data:/data/db
+    ports:
+      - '27017:27017'
+    # environment: 
+    #   MONGO_INITDB_ROOT_USERNAME: max
+    #   MONGO_INITDB_ROOT_PASSWORD: secret
+      # - MONGO_INITDB_ROOT_USERNAME=max
+  api:
+    build: ./topicos-api
+    # build:
+    #   context: ./backend
+    #   dockerfile: Dockerfile
+    #   args:
+    #     some-arg: 1
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongodb
+  frontend:
+    build: ./administracion
+    ports: 
+      - '4200:4200'
+    stdin_open: true
+    tty: true
+    depends_on: 
+      - api
+    volumes:
+      - /Users/oscarmullerochoa/Desktop/TOPICOS2/administracion:/app
+
+volumes: 
+  data:

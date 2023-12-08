@@ -1,0 +1,64 @@
+
+<div class="background">
+    <div class="container-fluid d-flex" style="justify-content: center; align-items: center;">
+        <div class="card card-d" style="margin-top: 8vh; width: 90vh; height: 80vh;">
+            <div class="container mt-3">
+                <div class="d-flex mt-3" style="justify-content: center;">
+                    <div>
+                        <img src="assets/icon-for-a-zoo.png" alt="" style="margin-left: 3vh; height: 8rem; align-items: center;justify-content: center;display: flex;">
+                        <h2>Crear Usuario</h2>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="form-floating outline outline-white container" style="margin-left: 10px;">
+                        <input type="email"class="form-control form-control-lg" id="nombre" name="nombre"
+                               value="" [(ngModel)]="nombre" required placeholder="Ingresa con tu correo electrónico">
+                        <label for="email" style="margin-left: 10px;">Nombre</label>
+                    </div>
+                    <div class="form-floating outline outline-white container">
+                        <input type="email"class="form-control form-control-lg" id="apellido" name="apellido"
+                               value="" [(ngModel)]="apellido" required placeholder="Ingresa con tu correo electrónico">
+                        <label for="email" style="margin-left: 10px;">Apellido</label>
+                    </div>
+
+                </div>
+                <div class="my-3 p-3">
+                    <div class="form-floating outline outline-white container">
+                        <input type="email"class="form-control form-control-lg" id="correo" name="correo"
+                               value="" [(ngModel)]="correo" required placeholder="Ingresa con tu correo electrónico">
+                        <label for="email">Correo Electrónico</label>
+                    </div>
+                </div>
+                <div class="my-3 p-3">
+                    <div class="form-floating outline outline-white container">
+                        <input type="password" class="form-control form-control-lg" id="clave1" name="clave1"
+                               value="" [(ngModel)]="clave1" required placeholder="Ingresa con tu correo electrónico">
+                        <label for="email">Contraseña</label>
+                    </div>
+                </div>
+                <div class="my-3 p-3">
+                    <div class="form-floating outline outline-white container">
+                        <input type="password" [(ngModel)]="clave2" class="form-control form-control-lg" id="clave2" name="clave2"
+                               value="" required placeholder="Ingresa con tu correo electrónico">
+                        <label for="email">Confirmar Contraseña</label>
+                    </div>
+                </div>
+                <div class="d-flex" style="justify-content: space-between;">
+                    <div class="d-flex" style="justify-content: end;">
+                        <button class="" (click)="regresar()" >Regresar</button>
+                    </div>
+                    <div class="d-flex" style="justify-content: end;">
+                        <button class="" (click)="crearUsuario()">Registrarse</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    </div>
+        
+        
+        
+        
+        

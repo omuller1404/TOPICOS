@@ -1,0 +1,177 @@
+<div id="app" class="app app-content-full-height app-footer-fixed ">
+
+
+  <!-- BEGIN #sidebar -->
+  <div id="sidebar" class="app-sidebar">
+
+    <div class="auth-bg auth-bg-scroll bacl">
+      <div class="auth-mask"></div>
+    </div>
+
+
+    <!-- BEGIN scrollbar -->
+    <div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
+
+
+      <!-- BEGIN mobile-toggler -->
+      <div class="mobile-toggler">
+        <button type="button" class="menu-toggler" data-dismiss="sidebar-mobile">
+          <span class="mdi mdi-arrow-left"> </span>
+        </button>
+      </div>
+      <!-- END mobile-toggler -->
+
+
+
+      <div class="desktop-toggler">
+        <button type="button" class="menu-toggler" data-toggle="sidebar-minify">
+          <span class="mdi mdi-arrow-left"> </span>
+        </button>
+      </div>
+
+
+      <!-- BEGIN brand -->
+      <div class="brand">
+
+
+        <a class="brand-logo" href="/" title="FES">
+          <img src="assets/icon-for-a-zoo.png" class="logo" style="height: 4rem;">
+          <h1>Zoologico</h1>
+        </a>
+
+      </div>
+      <!-- END brand -->
+
+      <!-- BEGIN menu -->
+      <div class="menu">
+
+        <div class="menu-item has-sub ">
+          <a class="menu-link">
+            <span class="menu-icon"><i class="mdi mdi-credit-card-multiple"></i></span>
+            <span class="menu-text">Ventas</span>
+            <span class="menu-caret"><b class="caret"></b></span>
+          </a>
+          <div class="menu-submenu">
+            <div class="menu-item  ">
+              <a href="/app/taquilla" class="menu-link"><span class="menu-text">Taquilla</span></a>
+
+            </div>
+
+            <div class="menu-item  ">
+              <a href="/app/dulceria" class="menu-link"><span class="menu-text">Dulceria</span></a>
+
+            </div>
+          </div>
+        </div>
+        <div class="menu-item  ">
+          <a href="/app/areas" class="menu-link">
+            <span class="menu-icon"><i class="mdi mdi-home"></i></span>
+            <span class="menu-text">Areas</span>
+
+          </a>
+
+        </div>
+        <div class="menu-item  ">
+          <a href="/app/animales" class="menu-link">
+            <span class="menu-icon"><i class="mdi mdi-cow"></i></span>
+            <span class="menu-text">Animales</span>
+
+          </a>
+
+        </div>
+
+        <div class="menu-divider"></div>
+        <div class="menu-header"><span class="menu-text">Cerrar Sesión</span></div>
+        <div class="menu-item  ">
+          <a href="/login" class="menu-link">
+            <span class="menu-icon"><i class="mdi mdi-logout-variant"></i></span>
+            <span class="menu-text">Salir del Sistema</span>
+
+          </a>
+
+        </div>
+      </div>
+      <!-- END menu -->
+    </div>
+    <!-- END scrollbar -->
+
+    <!-- BEGIN mobile-sidebar-backdrop -->
+    <button class="app-sidebar-mobile-backdrop" data-dismiss="sidebar-mobile"></button>
+    <!-- END mobile-sidebar-backdrop -->
+  </div>
+  <!-- END #sidebar -->
+
+  <div id="content" class="app-content">
+
+    <div class="container-fluid ">
+
+      <!-- BEGIN #header -->
+      <div id="header" class="app-header">
+
+
+        <!-- BEGIN mobile-toggler -->
+        <div class="mobile-toggler">
+          <button type="button" class="menu-toggler" data-toggle="sidebar-mobile">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+        <!-- END mobile-toggler -->
+
+
+        <!-- BEGIN menu -->
+        <div class="menu">
+
+          <h3 class="page-header">
+          </h3>
+
+
+
+
+
+
+          <div class="menu-item dropdown ">
+            <a href="#" data-bs-toggle="dropdown" title=" Usuario Verificado " data-bs-display="static"
+              class="menu-link">
+              <div class="menu-img">
+                <i class="mdi mdi-account-circle-outline"></i>
+              </div>
+
+              <div class="menu-text lh-1">
+
+                {{usuario.nombre}} {{usuario.apellido}} <span class="mdi mdi-chevron-down"></span>
+                <small class="d-block fw-normal">{{usuario.correo}}</small>
+
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end me-lg-3 py-0 border">
+              <a class="dropdown-item d-flex align-items-center" href="public/perfil">
+                <span class="mdi mdi-account-circle fs-4 me-2 text-pink"></span> Mi perfil
+              </a>
+              <div class="dropdown-divider my-0"></div>
+
+              <a class="dropdown-item d-flex align-items-center" href="public/perfil">
+                <i class="mdi mdi-face-agent fs-4 me-2 text-pink"></i> Soporte
+              </a>
+              <div class="dropdown-divider my-0"></div>
+
+
+
+
+              <a class="dropdown-item d-flex align-items-center" href="public/salir" onclick="event.preventDefault();
+                                                       document.getElementById('logout-form').submit();">
+                <span class="mdi mdi-exit-to-app fs-4 me-2 text-pink"></span> Salir
+              </a>
+
+              <form id="logout-form" action="public/salir" method="POST" class="d-none">
+                <input type="hidden" name="_token" value="iorh6kkMTq7f5aJ3V9oTu2c0lTCjOcED6fDDzyfi">
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- END menu -->
+      </div>
+
+      <ng-container>
+        <router-outlet></router-outlet>
+      </ng-container>
+      <!-- END #header -->

@@ -1,0 +1,9 @@
+# Ignorar archivos y carpetas específicos
+
+# Carpetas de desarrollo
+.angular/
+.vscode/
+.dist/
+.node_modules/
+
+.package-lock.json

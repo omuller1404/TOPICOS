@@ -1,0 +1,4 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/public/css/app.min.css';
+@import 'assets/public/css/vendor.min.css';
+@import 'toastify-js/src/toastify.css';

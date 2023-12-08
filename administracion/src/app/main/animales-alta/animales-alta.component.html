@@ -1,0 +1,50 @@
+<div class="card rounded-4 overflow-hidden ">
+
+    <div class="card-header text-center bg-gray-100 text-center p-4 background">
+       <h4 class="card-title mt-3 fw-bold" style="color: white;"><span class="mdi mdi-check-circle"></span> Dar de alta un Animal </h4>
+   </div>
+   <div class="card-body p-3 p-sm-5" style="height: 60vh;">
+       <div class="d-flex" style="justify-content: space-between;">
+        <div class="col-4 col-sm-4">
+            <label for="">ANIMAL</label>
+            <select class="form-select form-select-lg mb-3" [(ngModel)]="animal" aria-label="Large select example">
+                <option [value]="item.nombre" *ngFor="let item of tiposDeAnimales">{{item.nombre}}</option>
+            </select>
+        </div>
+        <div class="col-4 col-sm-4">
+            <label for="">TIPO</label>
+          <select class="form-select form-select-lg mb-3 col-12 col-sm-12" [(ngModel)]="type" aria-label="Large select example">
+              <option [value]="item.tipo" *ngFor="let item of tiposDeAnimales">{{item.tipo}}</option>
+            </select>
+        </div>
+           <div class=" p-3 col-sm-4">
+               <div class="form-floating outline outline-white container">
+                   <input type="text" [(ngModel)]="nombre" class="form-control form-control-lg" id="email" name="email"
+                          value="" required placeholder="Ingresa con tu correo electrónico">
+                   <label for="email">Nombre del animal</label>
+               </div>
+           </div>
+        </div>
+        <div class="d-flex">
+            <div class="col-4 col-sm-4">
+                <label for="">SEXO</label>
+              <select class="form-select form-select-lg mb-3 col-12 col-sm-12" [(ngModel)]="sex" aria-label="Large select example">
+                  <option value="M" >M</option>
+                  <option value="H" >H</option>
+                </select>
+            </div>
+            <div class=" p-3 col-sm-4">
+                <div class="form-floating outline outline-white container">
+                    <input type="text" [(ngModel)]="edad" class="form-control form-control-lg" id="email" name="email"
+                           value="" required placeholder="Ingresa con tu correo electrónico">
+                    <label for="email">Edad</label>
+                </div>
+            </div>
+        </div>
+       <div class="d-flex mt-3" style="justify-content:end;">
+           <button (click)="postAnimales()" class="">Guardar Area</button>
+       </div>
+       <!--Se debe escribir el tipo de validación (Num. licencia, QR licencia fisica o QR Dinamico Licencia Digital) -->
+
+   </div>
+</div>
